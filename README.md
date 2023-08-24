@@ -176,3 +176,42 @@ System.out.println(c1.vercarros()); // Exibe detalhes completos do carro
 c1.buzinar(); // Simula ação de buzina
 ```
 Isso cria um objeto c1 do tipo carros, exibe seus detalhes e emite um som de buzina.
+
+## Arquivo: Carros_especiais.java
+## Classe carros_especiais
+A classe `carros_especiais` é uma subclasse da classe `carros`, que representa carros especiais. Ela herda todos os atributos e métodos da classe `carros`, incluindo o construtor `carros` e os métodos `vercarros` e `vercarrosimples`.
+
+## Herança:
+A herança é um conceito que permite que a classe `carros_especiais` herde todas as características da classe carros. Isso evita a necessidade de duplicar código para os atributos e métodos que são comuns entre carros regulares e especiais.
+```java
+public class carros_especiais extends carros { // Restante do Código...
+```
+## Construtor Específico:
+A classe `carros_especiais` possui um construtor que chama o construtor da classe `carros` usando `super(...)`. Isso permite que a inicialização dos atributos da classe base seja reutilizada para criar objetos de carros especiais.
+```java
+    public carros_especiais(int id, String marca, String modelo, float velocidade, float controle, float aceleração, float arrancada, float frenagem, int preço, String cor) {
+        super(id, marca, modelo, velocidade, controle, aceleração, arrancada, frenagem, preço, cor);
+    }
+```
+
+## Sobrescrita de Métodos:
+Os métodos `buzinar e bater` são sobrescritos na classe `carros_especiais`. Isso significa que a implementação original desses métodos na classe base `carros` é substituída pela nova implementação na classe carros_especiais. Isso permite que os `carros especiais` tenham comportamentos de buzina e colisão diferentes dos carros regulares.
+```java
+    @Override
+    public void buzinar() {
+        System.out.println(" BRRRROOOMMMM!");
+    }
+    @Override
+    public void bater() {
+        System.out.println("CRASHHHHHHHH!");
+    }
+```
+
+### Exemplo de Uso:
+Você pode criar objetos da classe carros_especiais da mesma maneira que cria objetos da classe carros. Aqui está um exemplo:
+```java
+carros_especiais c6 = new carros_especiais(6, "tesla", "foguete car", 10f, 8.0f, 10f, 10f, 9.0f, 3000000, "Cinza");
+c6.buzinar(); // Exibe a buzina específica de carros especiais
+c6.bater();   // Exibe o som de colisão específico de carros especiais
+```
+Isso cria um objeto `c6` da classe `carros_especiais`, demonstra a chamada de métodos sobrescritos e exibe seus comportamentos exclusivos.
