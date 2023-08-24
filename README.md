@@ -44,8 +44,8 @@ public class carros {
 A Herança possibilita que as classes compartilhem seus atributos, métodos e outros membros da classe entre si. Para a ligação entre as classes, a herança adota um relacionamento esquematizado hierarquicamente.
 
 Na Herança temos dois tipos principais de classe:
- -- Classe Base: A classe que concede as características a uma outra classe.
- -- Classe Derivada: A classe que herda as características da classe base.
+- Classe Base: A classe que concede as características a uma outra classe.
+- Classe Derivada: A classe que herda as características da classe base.
 
 ## Construtor
 Os objetos de carro são criados usando construtores. Um construtor é um método especial chamado quando um objeto é instanciado.
@@ -159,8 +159,8 @@ O construtor carros é usado para inicializar as propriedades do carro quando um
 Os atributos da classe, como id, marca, modelo, etc., são marcados como privados (private). Isso significa que eles não podem ser acessados diretamente de fora da classe. Em vez disso, são fornecidos métodos públicos (como vercarros e vercarrosimples) para acessar esses valores controladamente.
 ### Mas, então, o que é encapsulamento?
 Encapsulamento vem de encapsular, que em programação orientada a objetos significa `separar o programa em partes`, o mais isolado possível. A idéia é tornar o software mais flexível, fácil de modificar e de criar novas implementações. O Encapsulamento serve para `controlar o acesso aos atributos e métodos de uma classe`. É uma forma eficiente de proteger os dados manipulados dentro da classe, além de determinar onde esta classe poderá ser manipulada. Usamos o nível de acesso mais restritivo, private, que faça sentido para um membro particular. Sempre usamos `private`, a menos que tenhamos um bom motivo para deixá-lo com outro nível de acesso. Não devemos permitir o acesso público aos membros, exceto em caso de ser constantes. Isso porque membros públicos tendem a nos ligar a uma implementação em particular e limita a nossa flexibilidade em mudar o código. O encapsulamento que é dividido em dois níveis:
--- Nível de classe: Quando determinamos o acesso de uma classe inteira que pode ser public ou Package-Private (padrão);
--- Nível de membro: Quando determinamos o acesso de atributos ou métodos de uma classe que podem ser public, private, protected ou Package-Private (padrão).
+- Nível de classe: Quando determinamos o acesso de uma classe inteira que pode ser public ou Package-Private (padrão);
+- Nível de membro: Quando determinamos o acesso de atributos ou métodos de uma classe que podem ser public, private, protected ou Package-Private (padrão).
 
 ## Métodos de Acesso
 Os métodos `vercarros` e `vercarrosimples` são métodos públicos que permitem visualizar informações sobre o carro. O primeiro método exibe detalhes completos do carro, enquanto o segundo método fornece uma visão simplificada (marca e modelo).
