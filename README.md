@@ -215,3 +215,57 @@ c6.buzinar(); // Exibe a buzina específica de carros especiais
 c6.bater();   // Exibe o som de colisão específico de carros especiais
 ```
 Isso cria um objeto `c6` da classe `carros_especiais`, demonstra a chamada de métodos sobrescritos e exibe seus comportamentos exclusivos.
+
+## Arquivo: Garagem.java
+```java
+package jogo;
+import java.util.ArrayList;
+
+class Garagem<T extends carros> {
+    private ArrayList<T> carrosNaGaragem = new ArrayList<>();
+    public void adicionarCarro(T carro) {
+        carrosNaGaragem.add(carro);
+    }
+    public void listarCarros() {
+        for (T carro : carrosNaGaragem) {
+            System.out.println(carro.vercarros());
+        }
+    }
+}
+```
+## Classe Garagem
+A classe `Garagem` é uma classe genérica que permite adicionar e listar carros. Ela utiliza um tipo genérico `T`, que é restrito a ser uma subclasse de `carros` (usando `T extends carros`).
+
+## Classe Genérica:
+Uma classe genérica é uma classe que pode ser parametrizada com um ou mais tipos. Neste caso, `Garagem` é uma classe genérica que aceita um tipo `T` que deve ser uma subclasse de `carros`.
+
+## Atributos e Construtor:
+A classe `Garagem` possui um atributo `carrosNaGaragem` do tipo `ArrayList` que armazena objetos do tipo `T`. Ela possui métodos para adicionar carros à garagem e para listar os carros na garagem.
+
+## Método adicionarCarro:
+Este método permite adicionar um carro à lista `carrosNaGaragem`. Como o tipo genérico `T` é restrito a ser uma subclasse de `carros`, isso garante que apenas objetos que são do tipo de `carros` (ou suas subclasses, como `carros_especiais`) possam ser adicionados à garagem.
+
+## Método listarCarros:
+Este método percorre a lista de carros na garagem e chama o método `vercarros` para exibir os detalhes de cada carro na saída.
+
+### Exemplo de Uso:
+Você pode usar a classe Garagem para criar uma garagem, adicionar carros a ela e listar os carros presentes:
+```java
+// Criar objetos de carros
+carros c1 = new carros(1, "Ferrari", "LaFerrari", 8.3f, 8.8f, 9.6f, 9.3f, 10f, 800000, "vermelho");
+carros c2 = new carros(2, "McLaren", "P1", 9.4f, 8.7f, 9.5f, 9.1f, 10f, 780000, "Laranja");
+
+// Criar uma garagem de carros regulares
+Garagem<carros> garagemRegular = new Garagem<>();
+garagemRegular.adicionarCarro(c1);
+garagemRegular.adicionarCarro(c2);
+garagemRegular.listarCarros(); // Exibir detalhes dos carros regulares
+
+// Criar uma garagem de carros especiais
+carros_especiais c6 = new carros_especiais(6, "tesla", "foguete car", 10f, 8.0f, 10f, 10f, 9.0f, 3000000, "Cinza");
+Garagem<carros_especiais> garagemEspecial = new Garagem<>();
+garagemEspecial.adicionarCarro(c6);
+garagemEspecial.listarCarros(); // Exibir detalhes dos carros especiais
+```
+
+Isso cria garagens separadas para carros regulares e especiais, adiciona carros a elas e lista os carros presentes em cada garagem.
