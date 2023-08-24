@@ -101,3 +101,78 @@ if (escolha == 1) {
 }
 // Restante das condições
 ```
+
+## Arquivo: Carro.java
+## Classe `Carros`
+
+```java
+public class carros {
+
+    private int id;
+    private String marca;
+    private String modelo;
+    private float velocidade;
+    private float controle;
+    private float aceleração;
+    private float arrancada;
+    private float frenagem; 
+    private int preço;  
+    private String cor;   
+    
+    public carros(int id, String marca, String modelo, float velocidade, float controle, float aceleração, float arrancada, float frenagem, int preço, String cor) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidade = velocidade;
+        this.controle = controle;
+        this.aceleração = aceleração;
+        this.arrancada = arrancada;
+        this.frenagem = frenagem;
+        this.preço = preço;
+        this.cor = cor;
+    };
+    
+    public String vercarros() {
+        return id + "- \n Marca: " + marca + "\nModelo: " + modelo + "\nVelocidade: " + velocidade + " km/h" + "\nControle: " + controle + "\nAceleração: " + aceleração + "\nArrancada: " + arrancada + "\nFrenagem: " + frenagem + "\nPreço: R$" + preço + "\nCor: " + cor;
+    }
+    
+    public String vercarrosimples() {
+        return marca + "  " + modelo;
+    }
+    
+    void buzinar() {
+        System.out.println("biiiiiiii");
+    }
+    
+    void bater() {
+        System.out.println("BOOOOOOOMMMM");
+    }
+}
+```
+## Classe carros
+A classe `carros` representa um carro e contém várias propriedades (atributos) e métodos relacionados a carros. Os atributos são privados, o que significa que eles só podem ser acessados dentro da própria classe.
+
+## Construtor
+O construtor carros é usado para inicializar as propriedades do carro quando um objeto é criado. Ele aceita vários parâmetros, como id, marca, modelo, etc., e atribui esses valores às propriedades correspondentes da classe.
+
+## Encapsulamento
+Os atributos da classe, como id, marca, modelo, etc., são marcados como privados (private). Isso significa que eles não podem ser acessados diretamente de fora da classe. Em vez disso, são fornecidos métodos públicos (como vercarros e vercarrosimples) para acessar esses valores controladamente.
+### Mas, então, o que é encapsulamento?
+Encapsulamento vem de encapsular, que em programação orientada a objetos significa `separar o programa em partes`, o mais isolado possível. A idéia é tornar o software mais flexível, fácil de modificar e de criar novas implementações. O Encapsulamento serve para `controlar o acesso aos atributos e métodos de uma classe`. É uma forma eficiente de proteger os dados manipulados dentro da classe, além de determinar onde esta classe poderá ser manipulada. Usamos o nível de acesso mais restritivo, private, que faça sentido para um membro particular. Sempre usamos `private`, a menos que tenhamos um bom motivo para deixá-lo com outro nível de acesso. Não devemos permitir o acesso público aos membros, exceto em caso de ser constantes. Isso porque membros públicos tendem a nos ligar a uma implementação em particular e limita a nossa flexibilidade em mudar o código. O encapsulamento que é dividido em dois níveis:
+-- Nível de classe: Quando determinamos o acesso de uma classe inteira que pode ser public ou Package-Private (padrão);
+-- Nível de membro: Quando determinamos o acesso de atributos ou métodos de uma classe que podem ser public, private, protected ou Package-Private (padrão).
+
+## Métodos de Acesso
+Os métodos `vercarros` e `vercarrosimples` são métodos públicos que permitem visualizar informações sobre o carro. O primeiro método exibe detalhes completos do carro, enquanto o segundo método fornece uma visão simplificada (marca e modelo).
+
+## Métodos Adicionais
+Além dos métodos de visualização, a classe também possui dois métodos adicionais: `buzinar e bater`. Esses métodos simulam ações de um carro, como buzinar e colidir. Isso demonstra a ideia de que uma classe pode conter não apenas informações (atributos), mas também comportamentos (métodos).
+
+### Exemplo de Uso
+Um exemplo de uso dessa classe é criar objetos de carro e interagir com eles:
+```java
+carros c1 = new carros(1, "Ferrari", "LaFerrari", 8.3f, 8.8f, 9.6f, 9.3f, 10f, 800000, "vermelho");
+System.out.println(c1.vercarros()); // Exibe detalhes completos do carro
+c1.buzinar(); // Simula ação de buzina
+```
+Isso cria um objeto c1 do tipo carros, exibe seus detalhes e emite um som de buzina.
