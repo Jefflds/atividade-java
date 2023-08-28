@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author lucas, João portela, Thiago Cruz e Jefferson 
+ * @author Lucas, João Portela, Thiago Cruz e Jefferson
  *
  */
 module jogo_carro {

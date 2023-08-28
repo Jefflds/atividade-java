@@ -3,7 +3,7 @@ package jogo;
 import java.util.ArrayList;
 
 class Garagem<T extends carros> {
-	
+
     private ArrayList<T> carrosNaGaragem = new ArrayList<>();
 
     public void adicionarCarro(T carro) {
@@ -15,7 +15,5 @@ class Garagem<T extends carros> {
             System.out.println(carro.vercarros());
         }
     }
-    
-    
-    
+
 }
